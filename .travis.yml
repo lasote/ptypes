@@ -1,0 +1,29 @@
+language: cpp
+compiler:
+- gcc
+before_install:
+- sudo apt-get update -qq
+install:
+- wget http://www.biicode.com/downloads/latest/ubuntu32
+- mv ubuntu32 bii-ubuntu32.deb
+- (! sudo dpkg -i bii-ubuntu32.deb ) && sudo apt-get -f install
+- rm bii-ubuntu32.deb
+- wget http://www.cmake.org/files/v3.0/cmake-3.0.1-Linux-i386.tar.gz
+- tar -xzf cmake-3.0.1-Linux-i386.tar.gz
+- sudo cp -fR cmake-3.0.1-Linux-i386/* /usr
+- rm -rf cmake-3.0.1-Linux-i386
+- rm cmake-3.0.1-Linux-i386.tar.gz
+script:
+- cmake --version
+- bii init biicode_project
+- mkdir -p ./biicode_project/blocks/melikyan/ptypes
+- mv !(biicode_project) ./biicode_project/blocks/melikyan/ptypes
+- cd biicode_project
+- bii cpp:build
+- ./bin/melikyan_ptypes_src_ptypes_test
+after_success:
+- bii user melikyan -p $BII_MELIKYAN_PASSWORD
+- bii publish
+env:
+  global:
+    secure: Igm6LqEg202cBeVSFoBLXJoUmvM0ZAcEOp1my5/sOR2XbsmtSSlB1xTZmm3zIn9QxyroeSZI24L8zlYDidKwsCcXrdHOizUYj+WGly5snr72BQV4as7du9TFl2RKUwV5OH7+hBR4YmuC5wvfNvsfwYkeO359UTADSCeGR+xjgTQ=
