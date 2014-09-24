@@ -6,5 +6,5 @@ PTypes is a simple alternative to the STL that includes multithreading and netwo
 This is an adaptation from the original Hovik Melikyan ptypes library due to be incorporated to biicode.com
 The original software can be found in the author's website: http://www.melikyan.com/ptypes/
 
-Github repo: https://github.com/lasote/ptypes
-Biicode repo: http://www.biicode.com/melikyan/melikyan/ptypes
+* Github repo: https://github.com/lasote/ptypes
+* Biicode repo: http://www.biicode.com/melikyan/melikyan/ptypes
