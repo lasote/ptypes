@@ -15,6 +15,6 @@ ENDIF()
 # Actually create targets: EXEcutables and libraries.
 ADD_BIICODE_TARGETS()
 
-FOREACH(BII_TARGET ${BII_BLOCK_TARGETS})
-    target_link_libraries(${BII_TARGET} PUBLIC pthread)
-ENDFOREACH()
+#FOREACH(BII_TARGET ${BII_BLOCK_TARGETS})
+#    target_link_libraries(${BII_TARGET} PUBLIC pthread)
+#ENDFOREACH()
